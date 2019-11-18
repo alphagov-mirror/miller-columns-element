@@ -1,3 +1,4 @@
+@import "node_modules/govuk-frontend/govuk/core/typography";
 @import "node_modules/govuk-frontend/govuk/settings/all";
 @import "node_modules/govuk-frontend/govuk/tools/all";
 @import "node_modules/govuk-frontend/govuk/helpers/all";
@@ -37,8 +38,6 @@ $mc-active-item-background: govuk-colour("blue");
   display: none;
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
   vertical-align: top;
   white-space: normal;
   transition-duration: $mc-transition-time;
@@ -85,6 +84,20 @@ $mc-active-item-background: govuk-colour("blue");
 
 .miller-columns__column--collapse {
   display: none;
+}
+
+.miller-columns__column-heading {
+  @extend %govuk-heading-s;
+  padding: 2px 9px;
+
+  @include govuk-media-query($from: tablet) {
+    display: none;
+  }
+}
+
+.miller-columns__column-list {
+  margin: 0;
+  padding: 0;
 }
 
 .miller-columns__item {
